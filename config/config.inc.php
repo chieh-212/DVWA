@@ -16,10 +16,11 @@ $DBMS = getenv('DBMS') ?: 'MySQL';
 # If you are using MariaDB then you cannot use root, you must use create a dedicated DVWA user.
 #   See README.md for more information on this.
 $_DVWA = array();
-$_DVWA[ 'db_server' ]   = 'turntable.proxy.rlwy.net:29774';
-$_DVWA[ 'db_database' ] = 'railway';
-$_DVWA[ 'db_user' ]     = 'root';
-$_DVWA[ 'db_password' ] = 'GPJlQwByTBrIicZOCBRzXOccKrURZpwM';
+
+$_DVWA[ 'db_server' ]   = getenv('SERVER') ?: '';
+$_DVWA[ 'db_database' ] = getenv('MYSQL_DATABASE') ?: '';
+$_DVWA[ 'db_user' ]     = getenv('MYSQL_USER') ?: '';
+$_DVWA[ 'db_password' ] = getenv('MYSQL_PASSWORD') ?: '';
 $_DVWA[ 'db_port' ]     = '29774';
 
 # ReCAPTCHA settings
